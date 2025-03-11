@@ -3,4 +3,6 @@ module workshop_javafx_jdbc {
 	requires javafx.fxml;
 	
 	opens application to javafx.graphics, javafx.fxml;
+    opens gui to javafx.fxml; // <- Essa linha permite que o FXMLLoader acesse a classe MainViewController
+    exports gui;
 }
