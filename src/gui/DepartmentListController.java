@@ -44,21 +44,10 @@ public class DepartmentListController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		System.out.println("Método initialize() foi chamado.");
-		if (tableViewDepartment == null) {
-			System.out.println("Erro: tableViewDepartment ainda está NULL no initialize()!");
-		} else {
-			System.out.println("tableViewDepartment foi carregado corretamente.");
-		}
 		initializeNodes();
 	}
 
 	private void initializeNodes() {
-		if (tableViewDepartment == null) {
-			System.out.println("Erro crítico: tableViewDepartment ainda está NULL! Criando manualmente...");
-			tableViewDepartment = new TableView<>();
-		}
-
 		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
 		tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
 	}
