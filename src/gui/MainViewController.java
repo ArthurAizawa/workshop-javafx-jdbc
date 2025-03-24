@@ -17,19 +17,24 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import model.services.DepartmentService;
+import model.services.SellerService;
 
-public class MainViewController implements Initializable{
+public class MainViewController implements Initializable {
 	@FXML
 	private MenuItem menuItemSeller;
 	@FXML
 	private MenuItem menuItemDepartment;
 	@FXML
 	private MenuItem menuItemAbout;
-	
+
 	@FXML
 	public void OnActionMenuItemSeller() {
-		System.out.println("MenuItemSeller");
+		loadView("/gui/SellerView.fxml", (SellerListController controller) -> {
+			controller.setSellerService(new SellerService());
+			controller.updateTableView();
+		});
 	}
+
 	@FXML
 	public void OnActionMenuItemDepartment() {
 		loadView("/gui/DepartmentView.fxml", (DepartmentListController controller) -> {
@@ -37,34 +42,40 @@ public class MainViewController implements Initializable{
 			controller.updateTableView();
 		});
 	}
+
 	@FXML
 	public void OnActionMenuItemAbout() {
-		loadView("/gui/About.fxml", x -> {});
+		loadView("/gui/About.fxml", x -> {
+		});
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	public synchronized <T> void loadView(String absoluteName, Consumer<T> InitializingAction) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			VBox newVBox = loader.load();
 			Scene mainScene = Main.getMainScene();
-			VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent(); //acessa o primeiro elemento do MainView, faz o cast para ScrollPane, pega o valor de seu children e faz o quest novamente para VBox
-			
-			Node mainMenu = mainVBox.getChildren().get(0); //pega o primeiro elemento dos children do VBox
+			VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent(); // acessa o primeiro elemento do
+																					// MainView, faz o cast para
+																					// ScrollPane, pega o valor de seu
+																					// children e faz o quest novamente
+																					// para VBox
+
+			Node mainMenu = mainVBox.getChildren().get(0); // pega o primeiro elemento dos children do VBox
 			mainVBox.getChildren().clear();
 			mainVBox.getChildren().add(mainMenu);
 			mainVBox.getChildren().addAll(newVBox.getChildren());
-			
+
 			T controller = loader.getController();
 			InitializingAction.accept(controller);
-			
-		}catch(IOException e) {
+
+		} catch (IOException e) {
 			Alerts.showAlert("IO Exception", "Error lodding view", e.getMessage(), AlertType.ERROR);
 		}
-	}	
+	}
 }
