@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerListController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerListController">
    <children>
       <Label text="Seller Registration">
          <font>
@@ -24,7 +24,7 @@
           <Button fx:id="btNew" mnemonicParsing="false" onAction="#OnBtNewAction" prefHeight="25.0" prefWidth="48.0" text="NEW" />
         </items>
       </ToolBar>
-      <TableView fx:id="tableViewSeller" prefHeight="209.0" prefWidth="930.0">
+      <TableView fx:id="tableViewSeller" prefHeight="208.0" prefWidth="902.0">
         <columns>
           <TableColumn fx:id="tableColumnId" prefWidth="126.0" text="ID" />
           <TableColumn fx:id="tableColumnName" prefWidth="207.0" text="NAME" />
