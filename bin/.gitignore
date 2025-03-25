@@ -1,1 +1,8 @@
+/.classpath
+/.project
+/application/
+/db.properties
+/db/
 /gui/
+/model/
+/module-info.class
