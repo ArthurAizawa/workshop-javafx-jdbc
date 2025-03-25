@@ -1,9 +1,11 @@
 package gui;
 
 import java.net.URL;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -131,10 +133,29 @@ public class SellerFormController implements Initializable {
 
 		obj.setId(Utils.tryParseToInt(txtId.getText()));
 
+		obj.setDepartment(comboBoxDepartment.getValue());
+
 		if (txtName.getText() == null || txtName.getText().trim().equals("")) {
 			exception.addErro("name", "Field can´t be empty");
 		}
 		obj.setName(txtName.getText());
+		
+		if (txtEmail.getText() == null || txtEmail.getText().trim().equals("")) {
+			exception.addErro("email", "Field can´t be empty");
+		}
+		obj.setEmail(txtEmail.getText());
+		
+		if(dpBirthDate.getValue() == null) {
+			exception.addErro("birthDate", "Field can´t be empty");
+		}
+		else {
+		Instant instant = Instant.from(dpBirthDate.getValue().atStartOfDay(ZoneId.systemDefault()));
+		obj.setBirthDate(Date.from(instant));
+		}
+		if (txtBaseSalary.getText() == null || txtBaseSalary.getText().trim().equals("")) {
+			exception.addErro("baseSalary", "Field can´t be empty");
+		}
+		obj.setBaseSalary(Utils.tryParseToDouble(txtBaseSalary.getText()));
 
 		if (exception.getErrors().size() > 0) {
 			throw exception;
@@ -157,7 +178,7 @@ public class SellerFormController implements Initializable {
 		Constraints.setTextFieldInteger(txtId);
 		Constraints.setTextFieldMaxLength(txtName, 70);
 		Constraints.setTextFieldDouble(txtBaseSalary);
-		Constraints.setTextFieldInteger(txtEmail);
+		Constraints.setTextFieldMaxLength(txtEmail, 90);
 		Utils.formatDatePicker(dpBirthDate, "dd/MM/yyyy");
 		initializeComboBoxDepartment();
 	}
@@ -184,12 +205,8 @@ public class SellerFormController implements Initializable {
 		}
 		List<Department> list = departmentService.findAll();
 		obsList = FXCollections.observableArrayList(list);
-		if (entity.getDepartment() == null) {
-			comboBoxDepartment.getSelectionModel().selectFirst();
-		}
-		else {
 			comboBoxDepartment.setItems(obsList);
-		}
+		
 	}
 
 	private void setErrorMessages(Map<String, String> errors) {
@@ -197,6 +214,30 @@ public class SellerFormController implements Initializable {
 
 		if (fields.contains("name")) {
 			errorName.setText(errors.get("name"));
+		}
+		else {
+			errorName.setText("");
+		}
+
+		if (fields.contains("email")) {
+			errorEmail.setText(errors.get("email"));
+		}
+		else {
+			errorEmail.setText("");
+		}
+
+		if (fields.contains("baseSalary")) {
+			errorBaseSalary.setText(errors.get("baseSalary"));
+		}
+		else {
+			errorBaseSalary.setText("");
+		}
+		
+		if (fields.contains("birthDate")) {
+			errorBirthDate.setText(errors.get("birthDate"));
+		}
+		else {
+			errorBirthDate.setText("");
 		}
 	}
 
