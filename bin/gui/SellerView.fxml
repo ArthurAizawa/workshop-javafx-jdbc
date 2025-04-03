@@ -9,31 +9,32 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerListController">
-   <children>
-      <Label text="Seller Registration">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-         <padding>
-            <Insets top="10.0" />
-         </padding>
-      </Label>
-      <ToolBar prefHeight="40.0" prefWidth="200.0">
-        <items>
-          <Button fx:id="btNew" mnemonicParsing="false" onAction="#OnBtNewAction" prefHeight="25.0" prefWidth="48.0" text="NEW" />
-        </items>
-      </ToolBar>
-      <TableView fx:id="tableViewSeller" prefHeight="208.0" prefWidth="902.0">
-        <columns>
-          <TableColumn fx:id="tableColumnId" prefWidth="126.0" text="ID" />
-          <TableColumn fx:id="tableColumnName" prefWidth="207.0" text="NAME" />
-            <TableColumn fx:id="tableColumnEmail" prefWidth="139.0" text="Email" />
-            <TableColumn fx:id="tableColumnBaseSalary" prefWidth="84.0" text="BaseSalary" />
-            <TableColumn fx:id="tableColumnBirthDate" prefWidth="75.0" text="BirthDate" />
-            <TableColumn fx:id="tableColumnEDIT" prefWidth="72.0" />
-            <TableColumn fx:id="tableColumnREMOVE" prefWidth="69.0" />
-        </columns>
-      </TableView>
-   </children>
+<VBox spacing="10" alignment="TOP_CENTER" prefHeight="624.0" prefWidth="1189.0"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="gui.SellerListController" stylesheets="@style.css">
+    
+    <children>
+        <!-- Título -->
+        <Label text="Seller Registration" styleClass="title-label" />
+        
+        <!-- Barra de Ferramentas -->
+        <ToolBar>
+            <items>
+                <Button fx:id="btNew" text="➕ New Seller" onAction="#OnBtNewAction" styleClass="button-primary"/>
+            </items>
+        </ToolBar>
+        
+        <!-- Tabela de Vendedores -->
+        <TableView fx:id="tableViewSeller" prefHeight="400.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="tableColumnId" text="ID" minWidth="80"/>
+                <TableColumn fx:id="tableColumnName" text="NAME" minWidth="200"/>
+                <TableColumn fx:id="tableColumnEmail" text="📧 Email" minWidth="250"/>
+                <TableColumn fx:id="tableColumnBaseSalary" text="💰 Base Salary" minWidth="150"/>
+                <TableColumn fx:id="tableColumnBirthDate" text="🎂 Birth Date" minWidth="150"/>
+                <TableColumn fx:id="tableColumnEDIT" text="✏️ Edit" minWidth="75"/>
+                <TableColumn fx:id="tableColumnREMOVE" text="🗑 Remove" minWidth="75"/>
+            </columns>
+        </TableView>
+    </children>
 </VBox>

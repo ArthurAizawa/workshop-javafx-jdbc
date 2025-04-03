@@ -7,30 +7,32 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepartmentListController">
-   <children>
-      <Label text="Department Registration">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-         <padding>
-            <Insets top="10.0" />
-         </padding>
-      </Label>
-      <ToolBar prefHeight="40.0" prefWidth="200.0">
-        <items>
-          <Button fx:id="btNew" mnemonicParsing="false" onAction="#OnBtNewAction" prefHeight="25.0" prefWidth="48.0" text="NEW" />
-        </items>
-      </ToolBar>
-      <TableView fx:id="tableViewDepartment" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn fx:id="tableColumnId" prefWidth="126.0" text="ID" />
-          <TableColumn fx:id="tableColumnName" prefWidth="384.0" text="NAME" />
-            <TableColumn fx:id="tableColumnEDIT" prefWidth="75.0" />
-            <TableColumn fx:id="tableColumnREMOVE" prefWidth="75.0" />
-        </columns>
-      </TableView>
-   </children>
+<VBox spacing="10" alignment="TOP_CENTER" prefHeight="613.0" prefWidth="930.0"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="gui.DepartmentListController" stylesheets="@style.css">
+    
+    <children>
+        <!-- Título -->
+        <Label text="Department Registration" styleClass="title-label" />
+        
+        <!-- Barra de Ferramentas -->
+        <ToolBar>
+            <items>
+                <Button fx:id="btNew" text="➕ New Department" onAction="#OnBtNewAction" styleClass="button-primary"/>
+            </items>
+        </ToolBar>
+        
+        <!-- Tabela de Departamentos -->
+        <TableView fx:id="tableViewDepartment" prefHeight="400.0" minWidth="800.0">
+            <columns>
+                <TableColumn fx:id="tableColumnId" text="ID" minWidth="80" />
+                <TableColumn fx:id="tableColumnName" text="NAME" minWidth="350"/>
+                <TableColumn fx:id="tableColumnEDIT" text="✏️ Edit" minWidth="90" />
+                <TableColumn fx:id="tableColumnREMOVE" text="🗑 Remove" minWidth="90" />
+            </columns>
+        </TableView>
+    </children>
 </VBox>

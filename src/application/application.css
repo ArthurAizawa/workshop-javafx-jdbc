@@ -1,1 +1,103 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+/* Estiliza a barra de menu */
+.menu-bar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 5.0px;
+    -fx-pref-width: 100.0%;
+}
+
+/* Estiliza os itens do menu */
+.menu .label {
+    -fx-text-fill: white;
+    -fx-font-size: 14.0px;
+    -fx-padding: 10.0px;
+}
+
+/* Efeito ao passar o mouse sobre os menus */
+.menu:hover {
+    -fx-background-color: #34495e;
+}
+
+/* Estiliza os itens do menu */
+.menu-item {
+    -fx-font-size: 14.0px;
+    -fx-padding: 5.0px 10.0px;
+}
+
+.menu-item .label{
+	-fx-text-fill:#333;
+}
+
+/* Efeito ao passar o mouse nos itens do menu */
+.menu-item:hover {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+}
+
+
+/* Estiliza o fundo da interface */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Estiliza o título */
+.title-label {
+    -fx-font-size: 22.0px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 15.0px 0.0;
+}
+
+/* Estiliza o botão */
+.button-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14.0px;
+    -fx-padding: 5.0px 15.0px;
+    -fx-background-radius: 5.0;
+}
+.button-primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Estiliza a tabela */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dcdcdc;
+    -fx-border-radius: 5.0;
+    -fx-padding: 10.0px;
+}
+
+/* Estiliza os cabeçalhos das colunas */
+.table-column {
+    -fx-font-size: 14.0px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+}
+
+.text-field, .date-picker, .combo-box {
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-border-color: #ccc;
+}
+
+.button {
+    -fx-background-color: #0078D7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #005a9e;
+}
+

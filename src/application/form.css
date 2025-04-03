@@ -1,0 +1,32 @@
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+TextField, ComboBox, DatePicker {
+    -fx-pref-height: 30px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #ccc;
+    -fx-padding: 5px;
+}
+
+Button {
+    -fx-pref-width: 100px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+}
+
+.btn-primary {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.btn-secondary {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}

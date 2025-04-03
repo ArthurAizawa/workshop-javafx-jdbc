@@ -6,26 +6,31 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
-   <content>
-      <VBox prefHeight="386.0" prefWidth="597.0">
-         <children>
-            <MenuBar>
-              <menus>
-                <Menu mnemonicParsing="false" text="Registration">
-                  <items>
-                    <MenuItem fx:id="menuItemSeller" mnemonicParsing="false" onAction="#OnActionMenuItemSeller" text="Seller" />
-                        <MenuItem fx:id="menuItemDepartment" mnemonicParsing="false" onAction="#OnActionMenuItemDepartment" text="Department" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#OnActionMenuItemAbout" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-         </children>
-      </VBox>
-   </content>
+<ScrollPane fitToWidth="true" fitToHeight="true" prefHeight="625.0" prefWidth="1183.0"
+    xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="gui.MainViewController" stylesheets="@style.css">
+    
+    <content>
+        <VBox prefHeight="624.0" prefWidth="1202.0" fillWidth="true">
+            <children>
+                <!-- Barra de Menu -->
+                <MenuBar styleClass="menu-bar" maxWidth="Infinity">
+                    <menus>
+                        <Menu text="📋 Registration">
+                            <items>
+                                <MenuItem fx:id="menuItemSeller" text="👤 Seller" onAction="#OnActionMenuItemSeller"/>
+                                <MenuItem fx:id="menuItemDepartment" text="🏢 Department" onAction="#OnActionMenuItemDepartment"/>
+                            </items>
+                        </Menu>
+                        
+                        <Menu text="❓ Help">
+                            <items>
+                                <MenuItem fx:id="menuItemAbout" text="ℹ️ About" onAction="#OnActionMenuItemAbout"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </VBox>
+    </content>
 </ScrollPane>
