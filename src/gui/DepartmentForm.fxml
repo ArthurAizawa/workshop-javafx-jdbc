@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="190.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepartmentFormController">
    <children>
-      <GridPane layoutY="14.0" prefHeight="157.0" prefWidth="503.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <GridPane layoutY="14.0" prefHeight="157.0" prefWidth="503.0" stylesheets="@../application/form.css" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="63.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="232.0" />

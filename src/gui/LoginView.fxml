@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="434.0" prefWidth="818.0" stylesheets="@../application/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
+   <content>
+      <VBox prefHeight="388.0" prefWidth="764.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="655.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="142.0" prefWidth="190.0" text="LOGIN" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="655.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="142.0" prefWidth="190.0" text="USER" textAlignment="CENTER" textFill="#464646" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField opacity="0.22" prefHeight="25.0" prefWidth="363.0" styleClass="txt_user" stylesheets="@../application/login.css">
+                     <effect>
+                        <InnerShadow choke="0.27" height="31.26" offsetX="-5.0" offsetY="-2.0" radius="14.7625" width="29.79">
+                           <color>
+                              <Color opacity="0.6335877776145935" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="655.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="142.0" prefWidth="190.0" text="PASSWORD" textFill="#464646" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField opacity="0.22" prefHeight="25.0" prefWidth="363.0" styleClass="txt_password" stylesheets="@../application/login.css">
+                     <effect>
+                        <InnerShadow choke="0.27" height="31.26" offsetX="-5.0" offsetY="-2.0" radius="14.7625" width="29.79">
+                           <color>
+                              <Color opacity="0.6335877776145935" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
