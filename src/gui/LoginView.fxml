@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="434.0" prefWidth="818.0" stylesheets="@../application/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginViewController">
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="434.0" prefWidth="818.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginViewController">
    <content>
       <VBox prefHeight="388.0" prefWidth="764.0">
          <children>
@@ -28,7 +28,7 @@
                         <Font name="Verdana" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="usuarioField" opacity="0.22" prefHeight="25.0" prefWidth="363.0" styleClass="txt_user" stylesheets="@../application/login.css">
+                  <TextField fx:id="usuarioField" opacity="0.22" prefHeight="25.0" prefWidth="363.0" styleClass="txt_user" stylesheets="@../application/application.css">
                      <effect>
                         <InnerShadow choke="0.27" height="31.26" offsetX="-5.0" offsetY="-2.0" radius="14.7625" width="29.79">
                            <color>
@@ -54,7 +54,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="senhaField" opacity="0.22" prefHeight="25.0" prefWidth="363.0" styleClass="txt_password" stylesheets="@../application/login.css">
+                  <TextField fx:id="senhaField" opacity="0.22" prefHeight="25.0" prefWidth="363.0" styleClass="txt_password" stylesheets="@../application/application.css">
                      <effect>
                         <InnerShadow choke="0.27" height="31.26" offsetX="-5.0" offsetY="-2.0" radius="14.7625" width="29.79">
                            <color>

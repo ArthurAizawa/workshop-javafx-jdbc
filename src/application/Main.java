@@ -19,7 +19,7 @@ public class Main extends Application {
 			Parent parent = loader.load();
 			mainScene = new Scene(parent);
 			mainScene.getStylesheets().clear();
-			mainScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			mainScene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
 			primaryStage.setScene(mainScene);
 			primaryStage.setTitle("Sample JavaFX application");
 			primaryStage.show();
@@ -31,8 +31,13 @@ public class Main extends Application {
 	public static Scene getMainScene() {
 		return mainScene;
 	}
+	
+	public static void setMainScene(Scene Scene) {
+		Main.mainScene = mainScene;
+	}
 
 	public static void main(String[] args) {
 		launch(args);
 	}
+
 }
